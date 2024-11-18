@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Elpa - Ton meilleur ami</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="Elpa.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=ht0GvzB7"></script>
+
+</head>
+<body>
+<div id="loadingScreen" class="loading-screen">
+    <h1>Et si on discutait avec </h1><br>
+    <img src="Elpa%20logo.png" alt="Image description" style="height: 124px;">
+</div>
+
+<div id="chatContainer" class="chat-container">
+    <p class="chat-intro">Tu peux voir ton historique de discussion juste ici !</p>
+
+</div>
+<div id="faceContainer" class="face-container">
+    <img src="Elpa%20logo.png" alt="Image description" style="height: 148px;">
+    <div class="area" >
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div >
+</div>
+<div class="controls">
+
+    <input type="text" id="textInput" placeholder="Écrivez quelque chose..." >
+    <button id="speakButton">Envoyez</button>
+    <br>
+    <select id="questions">
+        <option>Je me sens triste.</option>
+        <option>Je suis anxieux.</option>
+        <option>Je me sens déprimé.</option>
+        <option>Avez-vous des conseils pour aller mieux ?</option>
+        <option>Je me sens seul.</option>
+        <option>Je n'arrive pas à dormir.</option>
+        <option>Comment prendre soin de ma santé mentale ?</option>
+        <option>Merci.</option>
+        <option>Bonjour.</option>
+        <option>Je suis fatigué.</option>
+        <option>Je suis stressé.</option>
+        <option>Je manque de motivation.</option>
+        <option>J'ai des problèmes dans mes relations.</option>
+        <option>J'ai peur.</option>
+        <option>Je suis en colère.</option>
+        <option>Je n'arrive pas à me concentrer.</option>
+        <option>Quels hobby devrais-je essayer ?</option>
+        <option>Est-ce que faire une activité physique aide ?</option>
+        <option>Que devrais-je manger pour être en bonne santé ?</option>
+        <option>Que puis-je faire pour me divertir ?</option>
+        <option>Comment gérer l'échec ?</option>
+        <option>Quels projets devrais-je entreprendre ?</option>
+        <option>Comment puis-je améliorer mes relations familiales ?</option>
+        <option>Comment puis-je me faire des amis ?</option>
+    </select>
+    <button class="presetButton" data-phrase="Je suis Elpa, votre ami virtuel, j'espère qu'on va pouvoir s'amuser !">Qui es-tu ?</button>
+    <button class="presetButton" data-phrase="Je vais bien, merci de demander. Et toi ?">Comment ça va ?</button>
+    <button class="presetButton" data-phrase="Je suis là pour t'aider avec ce que tu veux !">Que fais-tu ?</button>
+</div>
+<script src="sketch.js"></script>
+<script>
+    document.getElementById('questions').addEventListener('change', function() {
+        document.getElementById('textInput').value = this.value;
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const loadingScreen = document.getElementById('loadingScreen');
+        loadingScreen.addEventListener('animationend', function() {
+            loadingScreen.style.display = 'none';
+        });
+
+    });
+</script>
+</body>
+</html>
